@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+header {
+  width: 100%;
+  padding: 36px;
+  background-color: #1b1b1b;
+  color: white;
+  text-align: center;
+  position: fixed;
+  z-index: 50;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+main {
+  padding-top: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 2.2px 2.2px -11px rgba(0, 0, 0, 0.02),
+    0px 5.4px 5.3px -11px rgba(0, 0, 0, 0.028),
+    0px 10.1px 9.9px -11px rgba(0, 0, 0, 0.035),
+    0px 18.1px 17.6px -11px rgba(0, 0, 0, 0.042),
+    0px 33.8px 33px -11px rgba(0, 0, 0, 0.05),
+    0px 81px 79px -11px rgba(0, 0, 0, 0.07);
+}
+
+.card::before {
+  visibility: hidden;
+  opacity: 0;
+  content: "View Post ↗️";
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  min-height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(27, 27, 27, 1) 0%,
+    rgba(27, 27, 27, 1) 10%,
+    rgba(27, 27, 27, 0.8) 100%
+  );
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.card .imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 144px;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.card .textWrapper {
+  width: 100%;
+  padding: 16px;
+}
+
+.card_title {
+  font-size: 18px;
+  line-height: 150%;
+  margin-bottom: 8px;
+}
+
+.card_date {
+  font-size: 12px;
+  opacity: 0.5;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.card_description {
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 16px;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card_authors {
+  font-size: 14px;
+  line-height: 150%;
+  opacity: 0.7;
+}
